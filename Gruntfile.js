@@ -66,7 +66,7 @@ module.exports = function (grunt) {
                 src: 'resources/sprite/*.png',
                 destCss: 'build/css/sprite.css',
                 dest: 'public/assets/img/sprite.png',
-                imgPath: '/img/sprite.png',
+                imgPath: '/assets/img/sprite.png',
                 padding: 2
             }
         },
