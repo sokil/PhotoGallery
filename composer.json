@@ -1,0 +1,27 @@
+{
+    "name": "sokil/photoGallery",
+    "description": "Photo Gallery based on XML configs",
+    "require": {
+      "silex/silex": "~1",
+      "twig/twig": "^1.22",
+      "mobiledetect/mobiledetectlib": "^2.8",
+      "sokil/php-social-opengraph": "1.0.*",
+      "symfony/security": "2.7.*",
+      "symfony/twig-bridge": "2.7.*",
+      "symfony/console": "2.7.*"
+    },
+    "autoload": {
+      "psr-4": {
+        "Sokil\\Provider\\": "providers/",
+        "Sokil\\Service\\": "services/",
+        "Sokil\\Command\\": "command"
+      }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmytro Sokil",
+            "email": "dmytro.sokil@gmail.com"
+        }
+    ]
+}

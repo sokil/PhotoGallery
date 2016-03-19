@@ -1,0 +1,12 @@
+{
+  "name": "PhotoGallery",
+  "version": "0.0.1",
+  "authors": [
+    "Dmytro Sokil <dmytro.sokil@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^1.11",
+    "bootstrap": "^3.3"
+  }
+}

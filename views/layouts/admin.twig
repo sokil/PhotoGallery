@@ -1,0 +1,16 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+        <META http-equiv=content-type content="text/html; charset=utf-8">
+        <META content="" name=keywords>
+        <META content="" name=description>
+        <LINK href="/img/favicon.png" type=image/png rel="shortcut icon">
+        <link rel="stylesheet" href="/css/admin.css" />
+        {% block meta %}{% endblock %}
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+    </body>
+</html>

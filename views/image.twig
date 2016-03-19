@@ -1,0 +1,16 @@
+{% extends 'layouts/default.twig' %}
+
+{% block title %}{{ image.title }} - {% endblock %}
+
+{% block meta %}
+    {{ openGraph|raw }}
+    <meta name="description" content="{{ image.description }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="image-page {% if isMobile %}mobile{% else %}desktop{% endif %}">
+        <a href="/"><img src="{{ image.src }}" /></a>
+    </div>
+
+{% endblock %}

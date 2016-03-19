@@ -1,0 +1,37 @@
+{% extends 'layouts/default.twig' %}
+
+{% block js %}
+    <script type="text/javascript" src="/js/photolist.js"></script>
+    <script type="text/javascript">
+        renderPhotoList(
+            {{ images|json_encode|raw }},
+            {
+                socialButtons: {{ socialButtons }},
+                host: {{ host }}
+            }
+        );
+    </script>
+    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+{% endblock %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block meta %}
+    <link rel="stylesheet" href="/css/photolist.css" />
+    <META content="{{ title }}" name=keywords>
+    <META content="{{ title }}" name=description>
+{% endblock %}
+
+{% block content %}
+
+    <a href="mailto:{{ contactEmail }}" id="email" class="icon-mail"></a>
+
+    <div class="container">
+        <div class="redline top"></div>
+        <div id="photoList" {% if isMobile %}class="mobile"{% endif %}>
+        </div>
+        <div class="redline bottom"></div>
+    </div>
+
+    <div id="toTop" class="icon-arrow"></div>
+{% endblock %}

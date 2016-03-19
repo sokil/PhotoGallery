@@ -1,0 +1,21 @@
+{% extends 'layouts/admin.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <form method="post" action="/checkLogin" class="col-md-3 col-md-offset-4 col-xs-3 col-xs-offset-4" style="margin-top: 10%;">
+                <div class="form-group">
+                    <label>Логин</label>
+                    <input type="text" name="_username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Пароль</label>
+                    <input type="password" name="_password" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Вход" class="btn btn-default">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

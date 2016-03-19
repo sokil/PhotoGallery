@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#email {
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  margin-left: 392px;
+
+  width: 20px;
+  height: 20px;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto 0 auto;
+  padding-right: 121px;
+}
+
+.container {
+  .image {
+    position: relative;
+    margin-bottom: 2px;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.share-buttons {
+  position: absolute;
+  padding: 10px 5px;
+  height: 50px;
+  background: white;
+  display: none;
+  top: 50%;
+  margin-top: -35px;
+  left: 50%;
+  margin-left: -95px;
+}
+
+.share {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  cursor: pointer;
+  border: red;
+  margin: 0 5px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -ms-filter: alpha(opacity=0);
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: alpha(opacity=100);
+    filter: alpha(opacity=100);
+  }
+}
+
+#photoList:not(.mobile) .image:hover .share-buttons {
+  animation: fadeIn 1s forwards;
+  display: block;
+}
+
+.redline {
+  height: 1px;
+  background: red;
+  width: 900px;
+}
+
+.redline.top {
+  margin-bottom: 3px;
+}
+
+.redline.bottom {
+  margin-top: 3px;
+}
+
+#toTop {
+  height: 20px;
+  width: 20px;
+  position: fixed;
+  bottom: 4px;
+  left: 50%;
+  margin-left: 392px;
+  display: none;
+  cursor: pointer;
+}
+
+#toTop.active {
+  display: block;
+}
+
+.image-page {
+  img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  &.desktop {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -450px;
+    margin-top: -300px;
+  }
+
+  &.mobile {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1020px) {
+
+  body {
+    min-width: auto;
+  }
+
+  #email {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    padding: 0;
+  }
+
+  .container .redline {
+    height: 1px;
+    background: red;
+    width: 100%;
+  }
+
+  .container .image {
+    width: 100%;
+  }
+
+  .container .image img {
+    width: 100%;
+  }
+
+  #toTop {
+    right: 10px;
+    bottom: 45px;
+    margin-left: auto;
+    left: auto;
+  }
+}
+
