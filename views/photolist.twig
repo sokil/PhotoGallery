@@ -1,7 +1,7 @@
 {% extends 'layouts/default.twig' %}
 
 {% block js %}
-    <script type="text/javascript" src="/js/photolist.js"></script>
+    <script type="text/javascript" src="/assets/js/photolist.js"></script>
     <script type="text/javascript">
         renderPhotoList(
             {{ images|json_encode|raw }},
@@ -17,7 +17,7 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block meta %}
-    <link rel="stylesheet" href="/css/photolist.css" />
+    <link rel="stylesheet" href="/assets/css/photolist.css" />
     <META content="{{ title }}" name=keywords>
     <META content="{{ title }}" name=description>
 {% endblock %}
