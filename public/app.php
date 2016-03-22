@@ -48,7 +48,6 @@ $app->get('/', function () use ($app) {
         'socialButtons' => $app['config']['socialButtons'] ? 'true' : 'false',
         'title' => $app['config']['title'],
         'contactEmail' => $app['config']['contactEmail'],
-        'host' => $app['config']['host']
     ]);
 });
 

@@ -27,7 +27,7 @@ class ImageProvider
         $this->pathPrefix = $isMobile ? '/photo/mob/' : '/photo/web/';
     }
 
-    public function getPage($pageNumber, $length = 5)
+    public function getPage($pageNumber, $length = 20)
     {
         $images = $this->imageList->getElementsByTagName('image');
         $offset = ($pageNumber - 1) * $length;
@@ -46,17 +46,6 @@ class ImageProvider
         return $list;
     }
 
-    public function getById($id)
-    {
-        $xpath = new \DOMXPath($this->domDocument);
-        $imageElement = $xpath->query("//*[@id='$id']")->item(0);
-        if (!$imageElement) {
-            return null;
-        }
-
-        return $this->serializeImageElement($imageElement);
-    }
-
     public function getBySlug($slug)
     {
         $xpath = new \DOMXPath($this->domDocument);
@@ -71,7 +60,6 @@ class ImageProvider
     private function serializeImageElement(\DOMElement $imageElement)
     {
         return [
-            'id'            => $imageElement->getAttribute('id'),
             'src'           => $this->pathPrefix . $imageElement->getAttribute('src'),
             'title'         => $imageElement->getAttribute('title'),
             'description'   => $imageElement->getAttribute('description'),

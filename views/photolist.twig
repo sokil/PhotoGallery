@@ -1,15 +1,12 @@
 {% extends 'layouts/default.twig' %}
 
 {% block js %}
-    <script type="text/javascript" src="/assets/js/photolist.js"></script>
+    <script type="text/javascript" src="/assets/js/photolist.js?1"></script>
     <script type="text/javascript">
-        renderPhotoList(
-            {{ images|json_encode|raw }},
-            {
-                socialButtons: {{ socialButtons }},
-                host: '{{ host }}'
-            }
-        );
+        var app = new App({
+            photoList: {{ images|json_encode|raw }},
+            socialButtons: {{ socialButtons }}
+        })
     </script>
     <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 {% endblock %}

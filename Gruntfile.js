@@ -7,7 +7,9 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         jshint: {
-            files: [],
+            files: [
+                'resources/*/*.js'
+            ],
             options: {
                 loopfunc: true,
                 globals: {
@@ -27,7 +29,12 @@ module.exports = function (grunt) {
                 files: {
                     'public/assets/js/photolist.js': [
                         'bower_components/jquery/dist/jquery.min.js',
-                        'resources/js/photolist.js'
+                        'bower_components/underscore/underscore-min.js',
+                        'bower_components/backbone/backbone-min.js',
+                        'resources/photolist/Photo.js',
+                        'resources/photolist/PhotoCollection.js',
+                        'resources/photolist/PhotoListView.js',
+                        'resources/photolist/App.js'
                     ]
                 }
             },
@@ -49,14 +56,14 @@ module.exports = function (grunt) {
             photolist: {
                 files: {
                     "build/css/photolist.css": [
-                        "resources/css/photolist.less"
+                        "resources/photolist/styles.less"
                     ]
                 }
             },
             admin: {
                 files: {
                     "build/css/admin.css": [
-                        "resources/css/admin.less"
+                        "resources/admin/styles.less"
                     ]
                 }
             }
@@ -119,11 +126,11 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'jshint',
-        'newer:uglify',
-        'newer:sprite',
-        'newer:less',
-        'newer:postcss',
-        'newer:cssmin'
+        'uglify',
+        'sprite',
+        'less',
+        'postcss',
+        'cssmin'
     ]);
 
     grunt.registerTask('listen', [
