@@ -4,7 +4,7 @@ var PhotoListView = Backbone.View.extend({
 
     initialize: function(options) {
         this.socialButtons = options.socialButtons;
-        this.collection.on('sync', this.render);
+        this.listenTo(this.collection, 'sync', this.render);
     },
 
     render: function() {
@@ -57,9 +57,11 @@ var PhotoListView = Backbone.View.extend({
         this.$el.append(elements);
 
         // show img on load
-
         this.$el.find('img').each(function() {
-            $(this).parent().removeClass('standby');
+            var $img = $(this);
+            $img.load(function() {
+                $img.parent().removeClass('standby');
+            });
         });
     },
 

@@ -43,9 +43,12 @@ $app->post('/logout', function() use($app) {
  */
 $app->get('/', function () use ($app) {
     return $app['twig']->render('photolist.twig',[
-        'images'    => $app['imageProvider']->getPage(1),
+        'images'    => $app['imageProvider']->getPage(
+            1,
+            $app['config']['imageList']['pageLength']
+        ),
         'isMobile'  => $app['isMobile'],
-        'socialButtons' => $app['config']['socialButtons'] ? 'true' : 'false',
+        'socialButtons' => $app['config']['socialButtons'],
         'title' => $app['config']['title'],
         'contactEmail' => $app['config']['contactEmail'],
     ]);
@@ -61,7 +64,10 @@ $app->get('/images', function () use ($app) {
         $page = 1;
     }
 
-    $imagesPage = $app['imageProvider']->getPage($page);
+    $imagesPage = $app['imageProvider']->getPage(
+        $page,
+        $app['config']['imageList']['pageLength']
+    );
 
     return $app->json([
         'images' => $imagesPage,

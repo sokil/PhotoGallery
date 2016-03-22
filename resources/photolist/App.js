@@ -55,6 +55,7 @@ App.prototype = {
 
     // load images on scroll
     initPhotoList: function(photoList, socialButtons) {
+        // render photo list
         this.photoListView = new PhotoListView({
             el: '#photoList',
             collection: new PhotoCollection(

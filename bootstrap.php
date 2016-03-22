@@ -10,7 +10,7 @@ $app = new Silex\Application([
     'debug' => APPLICATION_ENV !== 'prod',
 ]);
 
-$app['config'] = require_once __DIR__ . '/configs/app.php';
+$app['config'] = require_once __DIR__ . '/configs/config.php';
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/views',

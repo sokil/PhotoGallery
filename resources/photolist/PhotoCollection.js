@@ -4,6 +4,10 @@ var PhotoCollection = Backbone.Collection.extend({
         return '/images?page=' + this.page;
     },
 
+    parse: function(response) {
+        return response.images;
+    },
+
     model: Photo,
 
     page: 1,

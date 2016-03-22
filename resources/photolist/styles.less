@@ -45,68 +45,64 @@ body {
   width: 900px;
   margin: 0 auto 0 auto;
   padding-right: 121px;
-}
-
-.container {
-  .image {
-    position: relative;
-    margin-bottom: 2px;
-    cursor: pointer;
-    width: 900px;
-    height: 600px;
-    img {
-      width: 100%;
-      height: 100%;
-      -webkit-animation: fadeIn 1s forwards;
+  #photoList {
+    min-height: 2400px;
+    &:not(.mobile) .image:hover .share-buttons {
       animation: fadeIn 1s forwards;
       display: block;
     }
-    &.standby {
-      img {
+    .image {
+      position: relative;
+      margin-bottom: 2px;
+      cursor: pointer;
+      width: 900px;
+      height: 600px;
+      .share-buttons {
+        position: absolute;
+        padding: 10px 5px;
+        height: 50px;
+        background: white;
         display: none;
+        top: 50%;
+        margin-top: -35px;
+        left: 50%;
+        margin-left: -95px;
+        .share {
+          height: 50px;
+          width: 50px;
+          display: inline-block;
+          cursor: pointer;
+          border: red;
+          margin: 0 5px;
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        -webkit-animation: fadeIn 1s forwards;
+        animation: fadeIn 1s forwards;
+        display: block;
+      }
+      &.standby {
+        img {
+          display: none;
+        }
       }
     }
   }
 }
 
-.share-buttons {
-  position: absolute;
-  padding: 10px 5px;
-  height: 50px;
-  background: white;
-  display: none;
-  top: 50%;
-  margin-top: -35px;
-  left: 50%;
-  margin-left: -95px;
-}
-
-.share {
-  height: 50px;
-  width: 50px;
-  display: inline-block;
-  cursor: pointer;
-  border: red;
-  margin: 0 5px;
-}
-
-#photoList:not(.mobile) .image:hover .share-buttons {
-  animation: fadeIn 1s forwards;
-  display: block;
-}
 
 .redline {
   height: 1px;
   background: red;
   width: 900px;
-}
-
-.redline.top {
-  margin-bottom: 3px;
-}
-
-.redline.bottom {
-  margin-top: 3px;
+  &.top {
+    margin-bottom: 3px;
+  }
+  &.bottom {
+    margin-top: 3px;
+  }
 }
 
 #toTop {
@@ -118,10 +114,9 @@ body {
   margin-left: 392px;
   display: none;
   cursor: pointer;
-}
-
-#toTop.active {
-  display: block;
+  &.active {
+    display: block;
+  }
 }
 
 .image-page {

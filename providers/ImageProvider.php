@@ -27,7 +27,7 @@ class ImageProvider
         $this->pathPrefix = $isMobile ? '/photo/mob/' : '/photo/web/';
     }
 
-    public function getPage($pageNumber, $length = 20)
+    public function getPage($pageNumber, $length)
     {
         $images = $this->imageList->getElementsByTagName('image');
         $offset = ($pageNumber - 1) * $length;
