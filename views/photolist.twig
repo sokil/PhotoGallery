@@ -1,7 +1,7 @@
 {% extends 'layouts/default.twig' %}
 
 {% block js %}
-    <script type="text/javascript" src="/assets/js/photolist.js?4"></script>
+    <script type="text/javascript" src="/assets/js/photolist.js?5"></script>
     <script type="text/javascript">
         var app = new App({
             photoList: {{ images|json_encode|raw }},
@@ -27,8 +27,7 @@
 
     <div class="container">
         <div class="redline top"></div>
-        <div id="photoList" {% if isMobile %}class="mobile"{% endif %}>
-        </div>
+        <div id="photoList" {% if isMobile %}class="mobile"{% endif %}></div>
         <div class="redline bottom"></div>
     </div>
 
