@@ -5,9 +5,9 @@ var PhotoListView = Backbone.View.extend({
     isMobile: false,
 
     socialButtonPatterns: {
-        fb: '<a class="share share-fb icon-share-fb" href="https://www.facebook.com/sharer/sharer.php?src=pluso&u=http%3A%2F%2F' + location.origin + '%2Fparis%2F{{slug}}&t={{title}}" target="_blank"></a>',
-        pinterest: '<a class="share share-pinterest icon-share-pinterest" data-pin-config="hidden" data-pin-do="buttonPin" data-pin-custom="true" href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2F' + location.origin + '%2Fparis%2F{{slug}}&media=http://' + location.origin + '%2F{{path}}&description={{title}}"></a>',
-        twitter: '<a class="share share-twitter icon-share-twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2F' + location.origin + '%2Fparis%2F{{slug}}&text={{title}}" target="_blank"></a>'
+        fb: '<a class="share share-fb icon-share-fb" href="https://www.facebook.com/sharer/sharer.php?src=pluso&u=' + location.origin + '%2Fparis%2F{{slug}}&t={{title}}" target="_blank"></a>',
+        pinterest: '<a class="share share-pinterest icon-share-pinterest" data-pin-config="hidden" data-pin-do="buttonPin" data-pin-custom="true" href="//www.pinterest.com/pin/create/button/?url=' + location.origin + '%2Fparis%2F{{slug}}&media=http://' + location.origin + '%2F{{path}}&description={{title}}"></a>',
+        twitter: '<a class="share share-twitter icon-share-twitter" href="https://twitter.com/intent/tweet?url=' + location.origin + '%2Fparis%2F{{slug}}&text={{title}}" target="_blank"></a>'
     },
 
     imageBlockPattern: '<div class="image standby"><img src="{{path}}"></div>',
