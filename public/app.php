@@ -78,6 +78,9 @@ $app->get('/paris/{slug}', function ($slug) use ($app) {
 
     // image
     $image = $app['imageProvider']->getBySlug($slug);
+    if (!$image) {
+        return $app->redirect('/');
+    }
 
     // open graph
     $openGraph = new \Sokil\OpenGraph;
