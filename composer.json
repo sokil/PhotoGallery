@@ -1,6 +1,7 @@
 {
     "name": "sokil/photo-gallery",
     "description": "Photo Gallery based on XML configs",
+    "type": "project",
     "require": {
       "silex/silex": "~1",
       "twig/twig": "^1.22",
