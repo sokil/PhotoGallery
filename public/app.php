@@ -89,7 +89,7 @@ $app->get('/photo/{slug}', function ($slug) use ($app) {
 	    ->setDescription($image['description'])
         ->setType(\Sokil\OpenGraph::TYPE_WEBSITES_ARTICLE)
         ->setImage('http://' . $_SERVER['HTTP_HOST'] . $image['src'])
-        ->setUrl('http://' . $_SERVER['HTTP_HOST'] . '/paris/' . $slug)
+        ->setUrl('http://' . $_SERVER['HTTP_HOST'] . '/photo/' . $slug)
         ->render();
 
     // render
