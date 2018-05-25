@@ -1,5 +1,5 @@
 {
-    "name": "sokil/photoGallery",
+    "name": "sokil/photo-gallery",
     "description": "Photo Gallery based on XML configs",
     "require": {
       "silex/silex": "~1",
