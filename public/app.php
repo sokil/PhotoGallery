@@ -74,7 +74,7 @@ $app->get('/images', function () use ($app) {
     ]);
 });
 
-$app->get('/paris/{slug}', function ($slug) use ($app) {
+$app->get('/photo/{slug}', function ($slug) use ($app) {
 
     // image
     $image = $app['imageProvider']->getBySlug($slug);
