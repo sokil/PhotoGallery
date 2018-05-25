@@ -4,7 +4,7 @@
 
 To install this gallery, clone repo somewhere and then execute few commands in app root:
 ```sh
-$ composer.phar install
+$ composer create-project sokil/photo-gallery
 $ bower install
 $ npm install
 $ grunt
