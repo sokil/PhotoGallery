@@ -17,13 +17,24 @@ use Symfony\Component\Security\Core\User\User;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 
+/**
+ * Provide credentials for site authorization
+ */
 class UserProvider implements UserProviderInterface
 {
     /**
      * @var \DOMDocument
      */
+    private $domDocument;
+
+    /**
+     * @var \DOMDocument
+     */
     private $imageList;
 
+    /**
+     * @param string $configPath
+     */
     public function __construct($configPath)
     {
         $this->domDocument = new \DOMDocument('1.0');
@@ -32,6 +43,11 @@ class UserProvider implements UserProviderInterface
         $this->imageList = $this->domDocument->getElementsByTagName('users')->item(0);
     }
 
+    /**
+     * @param string $username
+     *
+     * @return User|UserInterface
+     */
     public function loadUserByUsername($username)
     {
         $xpath = new \DOMXPath($this->domDocument);
@@ -53,6 +69,11 @@ class UserProvider implements UserProviderInterface
         return $user;
     }
 
+    /**
+     * @param UserInterface $user
+     *
+     * @return User|UserInterface
+     */
     public function refreshUser(UserInterface $user)
     {
         if (!$user instanceof User) {
@@ -62,6 +83,11 @@ class UserProvider implements UserProviderInterface
         return $this->loadUserByUsername($user->getUsername());
     }
 
+    /**
+     * @param string $class
+     *
+     * @return bool
+     */
     public function supportsClass($class)
     {
         return $class === 'Symfony\Component\Security\Core\User\User';

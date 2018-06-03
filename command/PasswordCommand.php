@@ -24,6 +24,9 @@ class PasswordCommand extends Command
      */
     private $encoder;
 
+    /**
+     * @param PasswordEncoderInterface $encoder
+     */
     public function setEncoder(PasswordEncoderInterface $encoder)
     {
         $this->encoder = $encoder;
@@ -38,6 +41,12 @@ class PasswordCommand extends Command
             ->addArgument('passwordSalt', InputArgument::OPTIONAL, 'Plain salt', '');
     }
 
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     *
+     * @return int|null|void
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         // find the encoder for a UserInterface instance

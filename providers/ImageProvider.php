@@ -11,8 +11,14 @@
 
 namespace Sokil\Provider;
 
+/**
+ * Provide list of images
+ */
 class ImageProvider
 {
+    /**
+     * @var \DOMDocument
+     */
     private $domDocument;
 
     /**
@@ -20,10 +26,20 @@ class ImageProvider
      */
     private $imageList;
 
+    /**
+     * @var bool
+     */
     private $isMobile = false;
 
+    /**
+     * @var string
+     */
     private $pathPrefix;
 
+    /**
+     * @param string $configPath
+     * @param bool $isMobile
+     */
     public function __construct($configPath, $isMobile = false)
     {
         $this->domDocument = new \DOMDocument('1.0');
@@ -36,6 +52,14 @@ class ImageProvider
         $this->pathPrefix = $isMobile ? '/photo/mob/' : '/photo/web/';
     }
 
+    /**
+     * Get page of images
+     *
+     * @param int $pageNumber
+     * @param int $length
+     *
+     * @return array
+     */
     public function getPage($pageNumber, $length)
     {
         $images = $this->imageList->getElementsByTagName('image');
@@ -55,6 +79,13 @@ class ImageProvider
         return $list;
     }
 
+    /**
+     * Get image metadata by slug
+     *
+     * @param string $slug
+     *
+     * @return array|null
+     */
     public function getBySlug($slug)
     {
         $xpath = new \DOMXPath($this->domDocument);
@@ -66,6 +97,10 @@ class ImageProvider
         return $this->serializeImageElement($imageElement);
     }
 
+    /**
+     * @param \DOMElement $imageElement
+     * @return array
+     */
     private function serializeImageElement(\DOMElement $imageElement)
     {
         return [
