@@ -1,6 +1,6 @@
 {% extends 'layouts/default.twig' %}
 
-{% block title %}{{ image.title }} - {% endblock %}
+{% block title %}{{ image.title }} - {{ title }}{% endblock %}
 
 {% block meta %}
     {{ openGraph|raw }}

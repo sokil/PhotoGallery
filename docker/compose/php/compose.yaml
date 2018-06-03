@@ -1,0 +1,18 @@
+version : '3'
+
+services:
+
+  php:
+    container_name: "${COMPOSE_PROJECT_NAME}_php"
+    image: "${PHP_IMAGE}"
+    command: "bash /entrypoint.sh"
+    volumes:
+      - "./compose/php/entrypoint.sh:/entrypoint.sh"
+      - "./${SRC_DIR}:/var/www/${COMPOSE_PROJECT_NAME}"
+      - "./compose/php/conf/php.ini:/usr/local/etc/php/php.ini"
+      - "./compose/php/conf/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini"
+      - "./compose/php/bin:/tools"
+      - "./compose/php/bash/.bashrc:/root/.bashrc"
+    environment:
+      PHP_IDE_CONFIG: "serverName=${COMPOSE_PROJECT_NAME}"
+      COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME}

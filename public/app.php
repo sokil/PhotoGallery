@@ -96,6 +96,7 @@ $app->get('/photo/{slug}', function ($slug) use ($app) {
     return $app['twig']->render('image.twig', [
         'image'     => $image,
         'openGraph' => $metaTags,
+        'title' => $app['config']['title'],
         'isMobile'  => $app['isMobile'],
     ]);
 });

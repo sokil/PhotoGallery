@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<images>
+    <image
+        src="image1.jpg"
+        slug="lock"
+        title="Lock"
+        description="Old lock"
+    />
+    <image
+        src="image2.jpg"
+        slug="kyiv"
+        title="Kyiv"
+        description="Kyiv"
+    />
+    <image
+        src="image3.jpg"
+        slug="santorini"
+        title="Santorini"
+        description="Santorini"
+    />
+</images>
+
+
