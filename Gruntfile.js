@@ -24,13 +24,13 @@ module.exports = function (grunt) {
                 options: {
                     compress: grunt.config('env') === 'prod',
                     beautify: grunt.config('env') !== 'prod',
-                    mangle: grunt.config('env') === 'prod',
+                    mangle: grunt.config('env') === 'prod'
                 },
                 files: {
                     'public/assets/js/photolist.js': [
-                        'bower_components/jquery/dist/jquery.min.js',
-                        'bower_components/underscore/underscore-min.js',
-                        'bower_components/backbone/backbone-min.js',
+                        'node_modules/jquery/dist/jquery.js',
+                        'node_modules/underscore/underscore.js',
+                        'node_modules/backbone/backbone.js',
                         'resources/photolist/Photo.js',
                         'resources/photolist/PhotoCollection.js',
                         'resources/photolist/PhotoListView.js',
@@ -46,8 +46,8 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'public/assets/js/admin.js': [
-                        'bower_components/jquery/dist/jquery.min.js',
-                        'bower_components/bootstrap/dist/js/bootstrap.min.js'
+                        'node_modules/jquery/dist/jquery.js',
+                        'node_modules/bootstrap/dist/js/bootstrap.js'
                     ]
                 }
             }
@@ -97,7 +97,7 @@ module.exports = function (grunt) {
             admin: {
                 files: {
                     'public/assets/css/admin.css': [
-                        'bower_components/bootstrap/dist/css/bootstrap.min.css',
+                        'node_modules/bootstrap/dist/css/bootstrap.css',
                         'build/css/admin.css'
                     ]
                 }
