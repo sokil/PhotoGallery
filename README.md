@@ -25,5 +25,5 @@ Configure images in `./configs/imageList.xml`:
 </images>
 ```
 
-Add images to `./public/photo/web/` and `./public/photo/mob/` for desctop and mobile versions.
+Add images to `./public/photo/web/` and `./public/photo/mob/` for desktop and mobile versions.
  
