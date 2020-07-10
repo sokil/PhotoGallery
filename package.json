@@ -20,6 +20,6 @@
     "grunt-newer": "1.*",
     "grunt-postcss": "~0.4.0",
     "grunt-spritesmith": "~5.1.4",
-    "jquery": "^1.11"
+    "jquery": "^3.5"
   }
 }
